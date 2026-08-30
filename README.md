@@ -1,47 +1,60 @@
 # bank_of_brennan
 
-Home lab: an isolated network subnet behind the house internet connection, with a Mac mini
-serving personal document storage and public web applications.
+A home lab: a private network behind the house internet connection, with a Mac mini that
+stores personal documents and hosts public websites.
 
-## Setup guides
+Written for someone doing this for the first time. Every step says what to do, why it exists,
+and what you should see when it worked.
 
-| Guide | Covers |
+## The guides
+
+| Guide | What it covers |
 |---|---|
-| [docs/home-subnet-setup.md](docs/home-subnet-setup.md) | Cabling, Cox gateway, Asus router, switch, address plan, verification |
-| [docs/mac-mini-server-setup.md](docs/mac-mini-server-setup.md) | macOS as a headless server, Cloudflare Tunnel, Tailscale, keeping documents private, backups |
+| **1.** [docs/home-subnet-setup.md](docs/home-subnet-setup.md) | Plugging things in, setting up the router, checking it works |
+| **2.** [docs/mac-mini-server-setup.md](docs/mac-mini-server-setup.md) | The Mac mini: websites, documents, keeping them apart, backups |
 
-Do them in that order — the server setup assumes the subnet is working.
+Do them in that order — the second assumes the first is finished.
 
-## Architecture
+## What gets built
 
 ```
-  Cox Panoramic Gateway   192.168.0.1/24     <- main house network
-            |  LAN -> WAN
-      Asus Router         192.168.50.1/24    <- isolated lab subnet
+  Cox Panoramic Gateway   192.168.0.1      <- the house network, unchanged
+            |  a cable from a LAN port to the WAN port
+      ASUS RT-AC68P       192.168.50.1     <- the private lab network
             |
         Switch
             |
       Mac mini            192.168.50.10
 ```
 
-The house network is untouched and cannot reach the lab. The lab reaches the internet
-normally.
+The house network carries on exactly as before and **cannot reach into the lab**. The lab
+reaches the internet normally.
 
-## Access model
+## How things get reached from outside
 
-Nothing is exposed by port forwarding. Both access paths dial **outward** from the Mac mini:
+Nothing is exposed by opening holes in the routers. Instead the Mac mini **calls out** and
+keeps the line open:
 
-- **Public web apps** — Cloudflare Tunnel, TLS terminated at Cloudflare
-- **Private apps and documents** — Tailscale, reachable only from your own devices
+- **Public websites** — Cloudflare Tunnel, with HTTPS handled for you
+- **Documents and private apps** — Tailscale, reachable only by your own devices
 
-No open inbound ports, no DDNS, no static IP, and the home IP address never appears in
-public DNS.
+So: no open ports, no dynamic DNS, no static IP needed, and your home internet address never
+appears in public.
 
-| Address | Purpose |
+## Addresses
+
+| Address | What it is |
 |---|---|
 | `192.168.0.1` | Cox gateway |
-| `192.168.0.50` | Asus WAN (reserved on Cox) |
-| `192.168.50.1` | Asus LAN / lab gateway |
+| `192.168.0.50` | The Asus, as seen by the house network |
+| `192.168.50.1` | The Asus, as seen by the lab — its admin page |
 | `192.168.50.10` | Mac mini |
-| `192.168.50.2` – `.99` | Fixed lab addresses |
-| `192.168.50.100` – `.200` | Lab DHCP pool |
+| `192.168.50.2` – `.99` | Free for devices you pin by hand |
+| `192.168.50.100` – `.200` | Handed out automatically |
+
+## Hardware
+
+- **ASUS RT-AC68P** — dual-band gigabit router (setup page: `router.asus.com`)
+- **Cox Panoramic Wifi Gateway** — modem and house router, rented
+- Unmanaged gigabit switch
+- Mac mini
