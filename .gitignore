@@ -1,0 +1,7 @@
+.env
+out/
+*.mbtiles
+__pycache__/
+*.pyc
+.venv/
+venv/
