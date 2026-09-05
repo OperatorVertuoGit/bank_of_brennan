@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "h1": "3D scanning and CAD modeling in San Clemente",
+    "sub": "You have a part and no drawings. We measure it, model it, and hand you geometry you can manufacture from — with the tolerance in writing.",
+    "cta": "Get a quote"
+  },
+  "proof": [
+    { "stat": "0.06 mm/m", "label": "volumetric accuracy, blue-light capture" },
+    { "stat": "5-10 days", "label": "typical turnaround, standard scope" },
+    { "stat": "10 mm - 4 m", "label": "part envelope, plus LiDAR for rooms and vessels" }
+  ],
+  "problems": {
+    "title": "What people come to us with",
+    "items": [
+      "A discontinued part that has to be remade, with no drawings and no supplier.",
+      "A boat fitting that corroded away and needs a replacement that actually fits.",
+      "A restoration piece where the only reference is the broken original.",
+      "A supplier's first article that has to be proven against the CAD before a run.",
+      "A building with drawings that no longer match what is actually there."
+    ]
+  },
+  "process": {
+    "title": "How a project runs",
+    "steps": [
+      { "n": "1", "t": "Scope call", "d": "What the object is, what you need it for, what tolerance actually matters. Fifteen minutes, no charge." },
+      { "n": "2", "t": "Written quote", "d": "Itemized by phase, with deliverable formats, units, coordinate origin and contracted tolerance spelled out. Valid 30 days." },
+      { "n": "3", "t": "Capture", "d": "In our San Clemente shop, or on your site. Coverage is verified before we leave." },
+      { "n": "4", "t": "Model", "d": "Mesh or parametric CAD, whichever you contracted. One revision round included." },
+      { "n": "5", "t": "QA and delivery", "d": "Independently checked against the spec: units, origin, tolerance, watertightness, format. You get a delivery note stating measured accuracy and any inferred geometry." }
+    ]
+  },
+  "why": {
+    "title": "Why the boring parts matter",
+    "items": [
+      { "t": "Volumetric accuracy, not marketing accuracy", "d": "Scanner brochures quote single-scan accuracy. Real parts need many scans aligned together, and error accumulates. We quote the volumetric figure, which is the one that governs your part." },
+      { "t": "Units, origin and orientation agreed up front", "d": "The three most common causes of a rejected model, and all three are avoidable by writing them down before anyone starts modeling." },
+      { "t": "Inferred geometry is named", "d": "Where a surface was occluded, worn away, or assumed symmetric, the delivery note says so. You should never find that out downstream." }
+    ]
+  }
+}

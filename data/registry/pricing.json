@@ -1,0 +1,78 @@
+{
+  "_owner_note": "OWNER-WRITES-ONLY. Agents read this and never modify it. Every number below is a PLACEHOLDER seeded from typical Orange County market rates — replace with your real rates before quoting anything. Agents must refuse to quote a line item that is not listed here.",
+  "currency": "USD",
+  "effective_date": "2026-01-01",
+  "version": 1,
+
+  "minimums": {
+    "shop_job_minimum": 450.00,
+    "onsite_job_minimum": 950.00,
+    "_note": "A job below the minimum is billed at the minimum, not declined."
+  },
+
+  "labor": {
+    "scan_capture_hour": 165.00,
+    "registration_cleanup_hour": 145.00,
+    "cad_modeling_prismatic_hour": 165.00,
+    "cad_modeling_freeform_surfacing_hour": 195.00,
+    "inspection_deviation_report_hour": 165.00,
+    "drafting_2d_drawing_hour": 125.00,
+    "consulting_hour": 185.00,
+    "_note": "Billed in 0.5 h increments after the first hour."
+  },
+
+  "day_rates": {
+    "onsite_half_day_4h": 950.00,
+    "onsite_full_day_8h": 1650.00,
+    "_note": "Day rate includes operator + equipment, excludes travel beyond zone 0."
+  },
+
+  "scan_to_bim": {
+    "per_sqft_lod200": 0.55,
+    "per_sqft_lod300": 0.95,
+    "minimum_sqft": 2000
+  },
+
+  "expenses": {
+    "matting_spray_per_can": 45.00,
+    "consumables_targets_flat": 65.00,
+    "media_usb_drive": 35.00,
+    "shipping_at_cost_markup_pct": 10
+  },
+
+  "multipliers": {
+    "rush_lt_72h": 1.5,
+    "rush_lt_24h": 2.0,
+    "after_hours_or_weekend": 1.35,
+    "confined_space_or_work_at_height": 1.25,
+    "_note": "Rush applies only when the job displaces scheduled work."
+  },
+
+  "revisions": {
+    "rounds_included": 1,
+    "additional_round_hour": 165.00
+  },
+
+  "terms": {
+    "deposit_pct": 50,
+    "payment_terms": "Net 15",
+    "quote_validity_days": 30,
+    "late_fee_pct_monthly": 1.5,
+    "_note": "Late fee must appear on the accepted quote to be enforceable."
+  },
+
+  "tax": {
+    "jurisdiction": "San Clemente, Orange County, CA",
+    "combined_rate_pct": null,
+    "_owner_action": "Look up the current combined rate at the CDTFA rate lookup and set it here. Left null on purpose so nothing quietly quotes a stale rate.",
+    "services_taxable": false,
+    "tangible_goods_taxable": true,
+    "_note": "Services are generally not subject to CA sales tax; tangible personal property we hand over generally is. Any invoice with a tangible line item gets tax_review_required=true and a CPA decides."
+  },
+
+  "data_retention": {
+    "working_data_days": 90,
+    "archive_years": 3,
+    "_note": "Stated on every quote. Raw scans belong to the client on request."
+  }
+}

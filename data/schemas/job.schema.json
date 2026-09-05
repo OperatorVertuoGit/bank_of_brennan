@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "job",
+  "type": "object",
+  "required": ["job_id", "state", "created", "updated", "customer", "scope", "confidential"],
+  "properties": {
+    "job_id": { "type": "string", "pattern": "^SC-[0-9]{4}-[0-9]{3}$" },
+    "state": { "type": "string", "enum": ["new", "qualified", "quoted", "accepted", "scheduled", "scanned", "processing", "qa", "delivered", "invoiced", "paid", "closed", "on_hold", "lost"] },
+    "created": { "type": "string" },
+    "updated": { "type": "string" },
+    "confidential": { "type": "boolean" },
+    "photo_permission": { "type": ["boolean", "null"] },
+    "lead_id": { "type": ["string", "null"] },
+    "quote_id": { "type": ["string", "null"] },
+    "invoice_id": { "type": ["string", "null"] },
+    "customer": { "type": "object", "required": ["name", "email"] },
+    "site": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["shop_dropoff", "onsite", "shipped"] },
+        "address": { "type": ["string", "null"] },
+        "travel_zone": { "type": ["string", "null"] },
+        "access_notes": { "type": ["string", "null"] },
+        "onsite_contact": { "type": ["string", "null"] }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["objects", "deliverables", "units_out", "coordinate_origin", "purpose"],
+      "properties": {
+        "objects": { "type": "array", "items": { "type": "object" } },
+        "deliverables": { "type": "array", "items": { "type": "string" } },
+        "tolerance_mm": { "type": ["number", "null"], "_note": "null only before the quote; quote-estimator must set it, cad-qa fails the job if it is still null at QA" },
+        "units_out": { "type": "string", "enum": ["mm", "in"] },
+        "coordinate_origin": { "type": "string" },
+        "purpose": { "type": "string" }
+      }
+    },
+    "schedule": {
+      "type": "object",
+      "properties": {
+        "scan_date": { "type": ["string", "null"] },
+        "due_date": { "type": ["string", "null"] },
+        "rush": { "type": "boolean" }
+      }
+    },
+    "money": { "type": "object" },
+    "assets_root": { "type": "string" },
+    "history": { "type": "array", "items": { "type": "object" } }
+  }
+}

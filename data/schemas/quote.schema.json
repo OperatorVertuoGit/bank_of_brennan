@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "quote",
+  "type": "object",
+  "required": ["quote_id", "lead_id", "job_id", "created", "status", "line_items", "totals", "terms", "scope_statement"],
+  "properties": {
+    "quote_id": { "type": "string", "pattern": "^Q-[0-9]{4}-[0-9]{3}$" },
+    "lead_id": { "type": "string" },
+    "job_id": { "type": "string" },
+    "created": { "type": "string" },
+    "valid_until": { "type": "string" },
+    "status": { "type": "string", "enum": ["draft", "sent", "accepted", "declined", "expired"] },
+    "pricing_version": { "type": "integer" },
+    "scope_statement": {
+      "type": "object",
+      "required": ["deliverables", "units_out", "coordinate_origin", "tolerance_mm", "exclusions"],
+      "properties": {
+        "deliverables": { "type": "array", "items": { "type": "string" } },
+        "units_out": { "type": "string", "enum": ["mm", "in"] },
+        "coordinate_origin": { "type": "string" },
+        "tolerance_mm": { "type": "number" },
+        "tolerance_basis": { "type": "string" },
+        "exclusions": { "type": "array", "items": { "type": "string" } },
+        "revision_rounds_included": { "type": "integer" }
+      }
+    },
+    "line_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["phase", "description", "rate_key", "qty", "unit", "rate", "amount"],
+        "properties": {
+          "phase": { "type": "string", "enum": ["travel", "setup", "capture", "registration", "mesh", "cad", "inspection", "drafting", "expense", "rush", "other"] },
+          "description": { "type": "string" },
+          "rate_key": { "type": "string" },
+          "qty": { "type": "number" },
+          "unit": { "type": "string" },
+          "rate": { "type": "number" },
+          "amount": { "type": "number" },
+          "taxable": { "type": "boolean" },
+          "range_low": { "type": ["number", "null"] },
+          "range_high": { "type": ["number", "null"] }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": ["subtotal", "total"],
+      "properties": {
+        "subtotal": { "type": "number" },
+        "travel": { "type": "number" },
+        "rush_multiplier": { "type": "number" },
+        "minimum_applied": { "type": "boolean" },
+        "tax": { "type": ["number", "null"] },
+        "total": { "type": "number" },
+        "total_range_low": { "type": ["number", "null"] },
+        "total_range_high": { "type": ["number", "null"] }
+      }
+    },
+    "tax_review_required": { "type": "boolean" },
+    "terms": { "type": "object" },
+    "assumptions": { "type": "array", "items": { "type": "string" } }
+  }
+}

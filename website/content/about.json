@@ -1,0 +1,15 @@
+{
+  "title": "About",
+  "meta": "A San Clemente 3D scanning and CAD modeling shop serving Orange County and North San Diego County.",
+  "body": [
+    "TODO — owner bio. Two paragraphs. Background, why this work, what you have actually built or fixed. Technical buyers read this to decide whether you have done their kind of job before.",
+    "TODO — equipment paragraph. Name the scanners you actually own and their calibration cadence. Keep it consistent with data/registry/equipment.json."
+  ],
+  "commitments": [
+    "Every project carries a contracted tolerance in writing.",
+    "We state measured accuracy on delivery, not just claimed accuracy.",
+    "We name inferred geometry rather than quietly shipping it.",
+    "Your raw scan data belongs to you and is available on request.",
+    "Nothing goes in the portfolio without written permission."
+  ]
+}

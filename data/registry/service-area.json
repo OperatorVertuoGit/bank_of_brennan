@@ -1,0 +1,17 @@
+{
+  "_owner_note": "Travel zones measured by driving distance from the San Clemente shop. Distances are placeholders — confirm and adjust.",
+  "origin": { "city": "San Clemente", "state": "CA", "zip": "92672" },
+  "zones": [
+    { "id": "zone_0", "label": "Local — included", "radius_mi": 15, "travel_fee": 0.00,
+      "cities": ["San Clemente", "Dana Point", "San Juan Capistrano", "Capistrano Beach", "Laguna Niguel", "Ladera Ranch", "Rancho Mission Viejo", "San Onofre"] },
+    { "id": "zone_1", "label": "South OC / North SD", "radius_mi": 35, "travel_fee": 150.00,
+      "cities": ["Mission Viejo", "Aliso Viejo", "Laguna Beach", "Lake Forest", "Irvine", "Oceanside", "Carlsbad", "Vista"] },
+    { "id": "zone_2", "label": "Greater OC / North SD County", "radius_mi": 60, "travel_fee": 325.00,
+      "cities": ["Anaheim", "Santa Ana", "Huntington Beach", "Costa Mesa", "Orange", "Fullerton", "Escondido", "Encinitas", "Temecula", "Murrieta"] },
+    { "id": "zone_3", "label": "LA / SD metro", "radius_mi": 110, "travel_fee": 650.00,
+      "cities": ["Los Angeles", "Long Beach", "Torrance", "San Diego", "Riverside", "Ontario"] },
+    { "id": "zone_4", "label": "Beyond — custom quote", "radius_mi": null, "travel_fee": null,
+      "rules": "Quote mileage at the current IRS business rate plus lodging and per diem if over 2 hours each way. Owner approves before quoting." }
+  ],
+  "marine_notes": "Dana Point Harbor and Oceanside Harbor work is tide- and haul-out dependent. Confirm the yard's schedule and gate access before committing to a date."
+}

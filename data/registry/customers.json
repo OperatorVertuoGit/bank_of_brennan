@@ -1,0 +1,4 @@
+{
+  "_note": "Customer directory. Dedupe key is lowercased email. Created by intake-coordinator, corrected by the owner.",
+  "customers": []
+}

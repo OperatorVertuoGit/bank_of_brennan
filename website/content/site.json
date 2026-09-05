@@ -1,0 +1,24 @@
+{
+  "_owner_note": "Single source of truth for brand + NAP. The name, address and phone here MUST match the Google Business Profile byte for byte — inconsistent NAP is the most common local-SEO bug.",
+  "brand": "Pier Point 3D",
+  "tagline": "3D scanning and CAD modeling in San Clemente, California",
+  "legal_name": "Pier Point 3D LLC",
+  "phone": "+1-949-555-0100",
+  "phone_display": "(949) 555-0100",
+  "email": "quotes@pierpoint3d.example",
+  "address": {
+    "street": "TODO street address",
+    "city": "San Clemente",
+    "region": "CA",
+    "postal_code": "92672",
+    "country": "US"
+  },
+  "geo": { "lat": 33.4270, "lng": -117.6120 },
+  "hours": "Mon-Fri 8:00-17:00 PT, on-site work by appointment",
+  "base_url": "https://example.com",
+  "form_endpoint": "TODO — form provider POST URL; its webhook feeds scripts/intake_from_form.py",
+  "area_served": ["San Clemente", "Dana Point", "San Juan Capistrano", "Laguna Niguel",
+                  "Mission Viejo", "Irvine", "Oceanside", "Carlsbad", "Orange County", "North San Diego County"],
+  "sameAs": ["TODO Google Business Profile URL", "TODO LinkedIn"],
+  "footer_note": "Accuracy figures are volumetric and equipment-specific. Every project quotes a contracted tolerance in writing."
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "qa report",
+  "type": "object",
+  "required": ["job_id", "ts", "reviewer", "result", "checks"],
+  "properties": {
+    "job_id": { "type": "string" },
+    "ts": { "type": "string" },
+    "reviewer": { "type": "string" },
+    "result": { "type": "string", "enum": ["pass", "fail"] },
+    "contracted_tolerance_mm": { "type": "number" },
+    "measured": {
+      "type": "object",
+      "properties": {
+        "max_deviation_mm": { "type": ["number", "null"] },
+        "rms_deviation_mm": { "type": ["number", "null"] },
+        "method": { "type": ["string", "null"] }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "severity", "result"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "severity": { "type": "string", "enum": ["hard_fail", "should_fix", "advisory"] },
+          "result": { "type": "string", "enum": ["pass", "fail", "n_a", "visual_only"] },
+          "measured": { "type": ["string", "number", "null"] },
+          "threshold": { "type": ["string", "number", "null"] },
+          "note": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "findings": { "type": "array", "items": { "type": "object" } },
+    "software_versions": { "type": "array", "items": { "type": "string" } }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "lead",
+  "type": "object",
+  "required": ["lead_id", "received", "source", "status", "customer", "inquiry"],
+  "properties": {
+    "lead_id": { "type": "string", "pattern": "^L-[0-9]{4}-[0-9]{3}$" },
+    "received": { "type": "string" },
+    "source": { "type": "string", "enum": ["web_form", "email", "phone", "referral", "walk_in", "gbp", "other"] },
+    "status": { "type": "string", "enum": ["new", "qualified", "disqualified", "quoted", "won", "lost"] },
+    "disqualify_reason": { "type": ["string", "null"] },
+    "customer": {
+      "type": "object",
+      "required": ["name", "email"],
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "name": { "type": "string" },
+        "company": { "type": ["string", "null"] },
+        "email": { "type": "string" },
+        "phone": { "type": ["string", "null"] }
+      }
+    },
+    "inquiry": {
+      "type": "object",
+      "required": ["object_description", "purpose", "location_type"],
+      "properties": {
+        "object_description": { "type": "string" },
+        "quantity": { "type": ["integer", "null"] },
+        "approx_size_mm": { "type": ["array", "null"], "items": { "type": "number" } },
+        "material": { "type": ["string", "null"] },
+        "surface_finish": { "type": ["string", "null"] },
+        "purpose": { "type": "string", "enum": ["reverse_engineering", "inspection_qc", "as_built_documentation", "restoration_replication", "3d_print_prep", "visualization_marketing", "legal_forensic", "other"] },
+        "location_type": { "type": "string", "enum": ["shop_dropoff", "onsite", "shipped", "unknown"] },
+        "site_address": { "type": ["string", "null"] },
+        "travel_zone": { "type": ["string", "null"] },
+        "deliverables_requested": { "type": "array", "items": { "type": "string" } },
+        "tolerance_mm": { "type": ["number", "null"] },
+        "deadline": { "type": ["string", "null"] },
+        "deadline_is_hard": { "type": ["boolean", "null"] },
+        "budget_signal": { "type": ["string", "null"] },
+        "confidential": { "type": ["boolean", "null"] },
+        "photo_permission": { "type": ["boolean", "null"] }
+      }
+    },
+    "open_questions": { "type": "array", "items": { "type": "string" } },
+    "attachments": { "type": "array", "items": { "type": "string" } },
+    "raw": { "type": ["string", "null"] },
+    "job_id": { "type": ["string", "null"] }
+  }
+}

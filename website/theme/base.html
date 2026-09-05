@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{meta}}">
+<link rel="canonical" href="{{canonical}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{meta}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{canonical}}">
+<link rel="stylesheet" href="{{root}}assets/css/styles.css">
+<script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <a class="brand" href="{{root}}">{{brand}}</a>
+  <nav>{{nav}}</nav>
+  <a class="tel" href="tel:{{phone}}">{{phone_display}}</a>
+</header>
+<main id="main">
+{{body}}
+</main>
+<footer class="site">
+  <div class="nap">
+    <strong>{{brand}}</strong><br>
+    {{street}}<br>
+    {{city}}, {{region}} {{postal}}<br>
+    <a href="tel:{{phone}}">{{phone_display}}</a> &middot; <a href="mailto:{{email}}">{{email}}</a><br>
+    {{hours}}
+  </div>
+  <div class="areas"><strong>Service area</strong><br>{{areas}}</div>
+  <p class="note">{{footer_note}}</p>
+</footer>
+</body>
+</html>

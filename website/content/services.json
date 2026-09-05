@@ -1,0 +1,123 @@
+{
+  "_owner_note": "One page is generated per entry. Keep the accuracy claims consistent with data/registry/equipment.json — web-publisher must not publish a number the equipment cannot hold.",
+  "services": [
+    {
+      "slug": "3d-scanning",
+      "title": "3D Scanning",
+      "nav": "3D Scanning",
+      "meta": "Blue-light, laser and LiDAR 3D scanning in San Clemente, CA. Parts, assemblies, vessels and buildings captured to a contracted tolerance.",
+      "lede": "We capture the geometry of a physical object as measured data you can build from — not an approximation.",
+      "body": [
+        "Bring the part to the shop in San Clemente, or we bring the scanner to your site anywhere in Orange County and North San Diego County. Which scanner we use is driven by two things: how big the object is and how tight the tolerance has to be.",
+        "Every project quotes a contracted tolerance in millimeters before work begins, and every delivery states the accuracy we actually measured. Volumetric, not single-scan — that distinction matters and most quotes hide it."
+      ],
+      "bullets": [
+        "Parts from roughly 10 mm to 4 m; rooms and vessels via terrestrial LiDAR",
+        "Contracted tolerance stated in writing, verified before delivery",
+        "On-site capture where the part cannot move",
+        "Output as STL, OBJ, PLY, E57 point cloud, or STEP solid"
+      ],
+      "faq": [
+        { "q": "Can you scan shiny, clear or black parts?", "a": "Yes, but they need a temporary matting spray that self-vanishes in a few hours. We ask permission in writing before spraying anything of yours. If the finish cannot be sprayed, we switch to photogrammetry and quote the accuracy that approach can hold." },
+        { "q": "Do I get a CAD model or a mesh?", "a": "Whichever you contract for. A mesh is a shell of triangles — good for 3D printing and visualization. A CAD model is editable, feature-based geometry — what you need to manufacture or modify a part. They are different work at different cost." }
+      ]
+    },
+    {
+      "slug": "reverse-engineering",
+      "title": "Reverse Engineering",
+      "nav": "Reverse Engineering",
+      "meta": "Turn an existing part with no drawings into a manufacturable CAD model. Reverse engineering services in San Clemente and Orange County, CA.",
+      "lede": "You have the part. Nobody has the drawings. The supplier is gone, or the tooling is gone, or it was never documented.",
+      "body": [
+        "We scan the part, then rebuild it as real parametric CAD with design intent — not a dumb solid you cannot edit. Holes are holes, fillets are fillets, and the model opens in your CAD system as a feature tree you can modify.",
+        "Where the original is worn, corroded or damaged, we tell you exactly which features were measured and which were inferred. That distinction goes in the delivery note on every job, because it is the thing that bites people later."
+      ],
+      "bullets": [
+        "Native SolidWorks or Fusion, plus neutral STEP and IGES",
+        "Feature-based model with usable design intent, not an untrimmed surface blob",
+        "Optional 2D drawings with datums and GD&T",
+        "Explicit list of inferred vs. measured features on every delivery"
+      ],
+      "faq": [
+        { "q": "Can you reverse engineer a part I don't own the rights to?", "a": "We scan parts for owners, licensees and rights holders. If ownership of the design is unclear, we will ask before starting. We do not help copy someone else's protected product." },
+        { "q": "What does it cost?", "a": "Capture cost scales with size. Modeling cost scales with feature count and how faithfully the form must be reproduced. A prismatic machined bracket is straightforward; a freeform hull or body panel is not, and we quote those as a range with the basis stated." }
+      ]
+    },
+    {
+      "slug": "cad-modeling",
+      "title": "CAD Modeling",
+      "nav": "CAD Modeling",
+      "meta": "Parametric CAD modeling and surfacing from scan data or sketches. San Clemente, California.",
+      "lede": "Scan data is a starting point. A model you can manufacture from is the deliverable.",
+      "body": [
+        "We build prismatic parts, sheet metal, weldments, and class-A freeform surfaces, delivered in your native format plus neutral STEP. Models come with named features and clean sketches, so the next engineer to open it can actually work.",
+        "Units, coordinate origin and axis convention are agreed before modeling starts and stated on delivery. Those three things cause more rework than anything else in this business."
+      ],
+      "bullets": [
+        "Prismatic, sheet metal, weldment and freeform surfacing",
+        "Native SolidWorks / Fusion plus STEP and IGES",
+        "Named features and clean, fully defined sketches",
+        "One revision round included; further rounds quoted before they are worked"
+      ],
+      "faq": [
+        { "q": "Will the model be editable?", "a": "Yes, when you contract a parametric model. A converted mesh solid is cheaper but has no feature history and is effectively uneditable — we will tell you which one you are buying." }
+      ]
+    },
+    {
+      "slug": "marine-3d-scanning",
+      "title": "Marine 3D Scanning",
+      "nav": "Marine",
+      "meta": "3D scanning for boats, hulls, hardware and marine fabrication at Dana Point Harbor and throughout South Orange County.",
+      "lede": "Hull sections, hardware, brackets, hatches, running gear — scanned in the yard or in the slip.",
+      "body": [
+        "We work around haul-out and tide schedules at Dana Point and Oceanside, and we plan around the two things that ruin a marine scan: direct coastal sun on a glossy gelcoat, and salt corrosion that hides the original surface.",
+        "Corroded or flaking parts get photographed before anything is touched, and we never clean or strip a client's part without written permission."
+      ],
+      "bullets": [
+        "Yard, slip and dockside capture",
+        "Replacement hardware and fairings reverse engineered from the original",
+        "Gelcoat and polished stainless handled with vanishing matting spray",
+        "Scheduling built around haul-out windows"
+      ],
+      "faq": [
+        { "q": "Can you scan a part still mounted on the boat?", "a": "Usually yes, if we can reach around it. Occluded geometry is the limit — we will tell you before the visit what we expect not to be able to see, and the delivery note names any surface reconstructed by inference." }
+      ]
+    },
+    {
+      "slug": "scan-to-bim",
+      "title": "As-Built & Scan-to-BIM",
+      "nav": "Scan-to-BIM",
+      "meta": "Terrestrial LiDAR as-built documentation and scan-to-BIM modeling for buildings and facilities in Orange County, CA.",
+      "lede": "Existing conditions, measured rather than assumed.",
+      "body": [
+        "Terrestrial LiDAR capture of interiors, exteriors, facilities and sites, delivered as a registered point cloud, and modeled to LOD 200 or LOD 300 in Revit where you need it.",
+        "Levels and grids are aligned to your project datum and project north — not to wherever the scanner happened to sit. Priced per square foot, not per hour, so the number does not move on you."
+      ],
+      "bullets": [
+        "Registered E57 / RCP point cloud",
+        "Revit model to LOD 200 or LOD 300",
+        "Aligned to your project datum and project north",
+        "Priced per square foot with a stated minimum"
+      ],
+      "faq": []
+    },
+    {
+      "slug": "inspection",
+      "title": "Inspection & Deviation Reports",
+      "nav": "Inspection",
+      "meta": "First-article inspection and CAD-to-part deviation reporting using 3D scan data. San Clemente, CA.",
+      "lede": "Did the part come out the way the model said it would?",
+      "body": [
+        "We scan the as-manufactured part and compare it to your nominal CAD, producing a color deviation map and a dimensional PDF report with the datums you specify.",
+        "Useful for first-article approval, supplier disputes, warpage and shrink investigation, and tooling wear tracking."
+      ],
+      "bullets": [
+        "Colour deviation map against your nominal CAD",
+        "Dimensional PDF report with your datum scheme",
+        "Max and RMS deviation reported, with the measurement method stated",
+        "Repeat inspections against a fixed setup for trend tracking"
+      ],
+      "faq": []
+    }
+  ]
+}

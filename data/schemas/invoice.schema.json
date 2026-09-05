@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "invoice",
+  "type": "object",
+  "required": ["invoice_id", "job_id", "type", "issued", "due", "status", "line_items", "totals"],
+  "properties": {
+    "invoice_id": { "type": "string", "pattern": "^INV-[0-9]{4}-[0-9]{3}$" },
+    "job_id": { "type": "string" },
+    "quote_id": { "type": ["string", "null"] },
+    "type": { "type": "string", "enum": ["deposit", "progress", "final", "credit"] },
+    "issued": { "type": "string" },
+    "due": { "type": "string" },
+    "status": { "type": "string", "enum": ["draft", "sent", "paid", "partial", "overdue", "void"] },
+    "line_items": { "type": "array", "items": { "type": "object" } },
+    "change_orders": { "type": "array", "items": { "type": "object" } },
+    "totals": {
+      "type": "object",
+      "required": ["subtotal", "total_due"],
+      "properties": {
+        "subtotal": { "type": "number" },
+        "deposit_credit": { "type": "number" },
+        "tax": { "type": ["number", "null"] },
+        "total_due": { "type": "number" }
+      }
+    },
+    "tax_review_required": { "type": "boolean" },
+    "payment": {
+      "type": "object",
+      "properties": {
+        "method": { "type": ["string", "null"] },
+        "paid_on": { "type": ["string", "null"] },
+        "processor_ref": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

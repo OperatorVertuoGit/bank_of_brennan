@@ -1,0 +1,16 @@
+{
+  "_owner_note": "Only jobs with confidential=false AND written photo permission. web-publisher drafts; owner approves. Delete these two seed entries once real work is published — do not ship placeholder case studies.",
+  "projects": [
+    {
+      "slug": "sample-hull-fairing",
+      "title": "SAMPLE — Replacement hull fairing, Dana Point",
+      "draft": true,
+      "industry": "Marine",
+      "problem": "PLACEHOLDER. Replace this with a real job. Describe what the client needed and why the existing route did not work.",
+      "approach": "PLACEHOLDER. Equipment used, why that equipment, how accuracy was held.",
+      "result": "PLACEHOLDER. Deliverable, measured accuracy, turnaround.",
+      "constraint": "PLACEHOLDER. One honest limitation or tradeoff.",
+      "images": []
+    }
+  ]
+}

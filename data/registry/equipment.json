@@ -1,0 +1,64 @@
+{
+  "_owner_note": "PLACEHOLDER SPECS. Replace each entry with the actual device you own and the accuracy from its calibration certificate. Agents quote the VOLUMETRIC accuracy publicly, never the single-scan figure. Never publish or contract a tolerance tighter than the volumetric figure here.",
+  "devices": [
+    {
+      "id": "sls-01",
+      "class": "structured_light",
+      "label": "Blue-light structured scanner (small/medium parts)",
+      "owned": false,
+      "accuracy_single_scan_mm": 0.03,
+      "accuracy_volumetric_mm_per_m": 0.06,
+      "part_envelope_mm": [10, 10, 10, 1200, 1200, 1200],
+      "best_for": ["machined parts", "castings", "hardware", "small assemblies"],
+      "weak_on": ["glossy/clear/black surfaces without matting", "deep narrow pockets"],
+      "day_rate_key": "onsite_full_day_8h"
+    },
+    {
+      "id": "hls-01",
+      "class": "handheld_laser",
+      "label": "Handheld laser scanner (medium parts, shop or field)",
+      "owned": false,
+      "accuracy_single_scan_mm": 0.05,
+      "accuracy_volumetric_mm_per_m": 0.10,
+      "part_envelope_mm": [100, 100, 100, 4000, 4000, 4000],
+      "best_for": ["automotive panels", "boat hardware", "engine components", "field work"],
+      "weak_on": ["sub-0.1 mm feature detail", "highly reflective surfaces"],
+      "day_rate_key": "onsite_full_day_8h"
+    },
+    {
+      "id": "tls-01",
+      "class": "terrestrial_lidar",
+      "label": "Terrestrial LiDAR (rooms, buildings, vessels)",
+      "owned": false,
+      "accuracy_range_mm": 2.0,
+      "registration_accuracy_mm": 3.0,
+      "range_m": 120,
+      "best_for": ["as-built documentation", "scan-to-BIM", "large vessels", "site layout"],
+      "weak_on": ["anything needing sub-millimeter detail", "shiny or wet surfaces"],
+      "day_rate_key": "onsite_full_day_8h"
+    },
+    {
+      "id": "pgm-01",
+      "class": "photogrammetry",
+      "label": "Photogrammetry (large, color-critical, or no-contact)",
+      "owned": true,
+      "accuracy_mm": "0.5-3.0 depending on scale bars and coverage",
+      "best_for": ["large objects", "color/texture capture", "parts we may not spray", "sculpture"],
+      "weak_on": ["featureless surfaces", "guaranteed tolerances"],
+      "requires": ["calibrated scale bars", "controlled lighting"],
+      "day_rate_key": "onsite_half_day_4h"
+    }
+  ],
+  "software": {
+    "_owner_action": "List actual licenses. QA records software + version in every delivery note.",
+    "registration": ["TODO"],
+    "mesh": ["TODO"],
+    "cad": ["TODO"],
+    "inspection": ["TODO"],
+    "bim": ["TODO"]
+  },
+  "calibration": {
+    "artifact_check_interval_days": 30,
+    "_note": "Scan-planner verifies calibration before every on-site visit and records it in the field report."
+  }
+}

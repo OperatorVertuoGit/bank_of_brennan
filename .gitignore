@@ -1,0 +1,32 @@
+# Secrets — never commit
+ops/.env
+*.pem
+*.key
+
+# Tier-1 scan data must never enter git history.
+# It lives on $SCAN_ROOT and is referenced by path + sha256 in each job's assets.json.
+*.stl
+*.obj
+*.ply
+*.e57
+*.rcp
+*.rcs
+*.step
+*.stp
+*.iges
+*.igs
+*.sldprt
+*.sldasm
+*.f3d
+*.3dm
+*.zip
+*.mp4
+data/**/00-raw/
+data/**/40-delivery/
+
+# Generated
+website/public/
+*.tmp
+__pycache__/
+*.pyc
+.DS_Store

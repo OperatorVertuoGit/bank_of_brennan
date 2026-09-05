@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "bus message",
+  "type": "object",
+  "required": ["msg_id", "ts", "from", "to", "topic", "summary"],
+  "properties": {
+    "msg_id": { "type": "string" },
+    "ts": { "type": "string" },
+    "from": { "type": "string", "enum": ["intake-coordinator", "quote-estimator", "scan-planner", "cad-qa", "billing-clerk", "web-publisher", "owner", "webform"] },
+    "to": { "type": "string", "enum": ["intake-coordinator", "quote-estimator", "scan-planner", "cad-qa", "billing-clerk", "web-publisher", "owner"] },
+    "topic": { "type": "string", "enum": ["lead.received", "lead.qualified", "lead.disqualified", "quote.drafted", "quote.accepted", "quote.declined", "deposit.paid", "scan.scheduled", "scan.complete", "qa.passed", "qa.failed", "job.delivered", "invoice.sent", "invoice.paid", "portfolio.drafted", "needs.human"] },
+    "job_id": { "type": ["string", "null"] },
+    "refs": { "type": "array", "items": { "type": "string" } },
+    "summary": { "type": "string" },
+    "requires_human": { "type": "boolean" },
+    "due": { "type": ["string", "null"] },
+    "error": { "type": ["string", "null"] },
+    "blocked_on": { "type": ["string", "null"] }
+  }
+}
